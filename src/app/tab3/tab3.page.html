@@ -1,0 +1,28 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title style="text-align: center;">
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="texto">
+    <span class="subtexto">Fazer login</span>
+    <span class="subtexto2">Prosseguir para o aplicativo</span>
+  </div>
+  <div style="padding-left: 25px;">
+    <ion-textarea
+    placeholder="Email ou Telefone"
+    [clearOnEdit]="true"
+    class="textarea"
+  ></ion-textarea>
+  </div>
+
+  <div>
+    <ion-item lines="none">
+      <ion-button fill="clear" slot="start">Criar conta</ion-button>
+      <ion-button slot="end">Avançar</ion-button>
+    </ion-item>
+  </div>
+</ion-content>
