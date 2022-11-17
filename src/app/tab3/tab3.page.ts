@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  formLogin = this.formBuilder.group({
+    emailCampo:['', Validators.compose([Validators.required, Validators.email])],
+    senhaCampo:['', Validators.compose([Validators.required, Validators.minLength(8)])]
+  });
+  constructor(private formBuilder: FormBuilder) {}
 
 }
