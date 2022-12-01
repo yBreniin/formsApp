@@ -7,24 +7,29 @@
 </ion-header>
 
 <ion-content>
-  <div class="texto">
-    <div class="subtexto">
-      <span>Fazer login</span>
-    </div>
-    <span class="subtexto2">Prosseguir para o aplicativo</span>
-  </div>
-  <div style="padding-left: 25px;">
-    <ion-textarea
-    placeholder="Email ou Telefone"
-    [clearOnEdit]="true"
-    class="textarea"
-  ></ion-textarea>
-  </div>
 
-  <div>
-    <ion-item lines="none" style="padding: 5px;">
-      <ion-button fill="clear" slot="start">Criar conta</ion-button>
-      <ion-button slot="end">Avançar</ion-button>
-    </ion-item>
-  </div>
+  <ng-container >
+    <div class="texto">
+      <div class="subtexto">
+        <span>Cadastrar-se</span>
+      </div>
+      <span class="subtexto2">Prosseguir para o aplicativo</span>
+    </div>
+
+    <div class="logindiv">
+      <ion-item class="itemlogin" lines="none">
+        <ion-input placeholder="Email@domain.com"></ion-input>
+      </ion-item>
+      <ion-item class="itemlogin" lines="none" style="top: 5px;">
+        <ion-input type="password" placeholder="Senha"></ion-input>
+      </ion-item>
+    </div>
+
+    <div>
+      <ion-item lines="none" style="padding: 10px;">
+        <ion-button slot="end">Criar conta</ion-button>
+      </ion-item>
+    </div>
+  </ng-container>
+
 </ion-content>

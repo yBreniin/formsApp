@@ -14,6 +14,10 @@
 
 ion-button {
   text-transform: none;
+  width: 100px;
+  height: 40px;
+  font-weight: 300;
+  font-size: 15px;
  }
 
 .texto {
@@ -24,6 +28,21 @@ ion-button {
   }
 
   .subtexto2 {
+  }
+}
 
+.logindiv {
+  padding: 20px;
+  grid-template-columns: 100%;
+  display: grid;
+  .itemlogin {
+    border-style: solid;
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: #ebebeb;
+  }
+
+  ion-label {
+    color: #949494;
   }
 }
