@@ -32,15 +32,14 @@ ion-button {
 }
 
 .logindiv {
-  padding: 20px;
   grid-template-columns: 100%;
+  width: 90%;
+  left: 20px;
   display: grid;
-  .itemlogin {
     border-style: solid;
     border-radius: 12px;
     border-width: 2px;
     border-color: #ebebeb;
-  }
 
   ion-label {
     color: #949494;

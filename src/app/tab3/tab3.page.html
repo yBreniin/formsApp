@@ -8,7 +8,7 @@
 
 <ion-content>
 
-  <ng-container >
+  <ng-container>
     <div class="texto">
       <div class="subtexto">
         <span>Cadastrar-se</span>
@@ -16,20 +16,22 @@
       <span class="subtexto2">Prosseguir para o aplicativo</span>
     </div>
 
-    <div class="logindiv">
-      <ion-item class="itemlogin" lines="none">
-        <ion-input placeholder="Email@domain.com"></ion-input>
-      </ion-item>
-      <ion-item class="itemlogin" lines="none" style="top: 5px;">
-        <ion-input type="password" placeholder="Senha"></ion-input>
-      </ion-item>
-    </div>
+    <form action="" [formGroup]="formCadastro">
+        <ion-item class="itemlogin" lines="none" class="logindiv">
+          <ion-label position="floating">E-mail</ion-label>
+          <ion-input formControlName="emailCampo" placeholder="Email@domain.com"></ion-input>
+        </ion-item>
 
-    <div>
-      <ion-item lines="none" style="padding: 10px;">
-        <ion-button slot="end">Criar conta</ion-button>
-      </ion-item>
-    </div>
+        <ion-item class="itemlogin" lines="none" style="top: 5px;" class="logindiv">
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input formControlName="senhaCampo" type="password" placeholder="Senha"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" style="padding: 10px;">
+          <ion-button (click)="salvarCadastro()" slot="end">Criar conta</ion-button>
+        </ion-item>
+    </form>
+
   </ng-container>
 
 </ion-content>
