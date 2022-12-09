@@ -1,0 +1,35 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="grupo">
+    <ion-item>
+      <ion-label position="stacked">Nome do Produto:</ion-label>
+      <ion-input formControlName="nomeProduto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Quantidade:</ion-label>
+      <ion-input formControlName="quantidade"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Preço:</ion-label>
+      <ion-input formControlName="preco"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">ID do Produto:</ion-label>
+      <ion-input formControlName="id"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" color="success" (click)="salvar()">Salvar</ion-button>
+
+  </form>
+</ion-content>

@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import { Injectable } from '@angular/core';
+
 import { Storage } from '@ionic/storage-angular';
 
 @Injectable({
@@ -14,10 +15,13 @@ export class StorageService {
   }
 
   async init() {
+    // If using, define drivers here: await this.storage.defineDriver(/*...*/);
     const storage = await this.storage.create();
     this._storage = storage;
   }
 
+  // Create and expose methods that users of this service can
+  // call, for example:
   public set(key: string, value: any) {
     this._storage?.set(key, value);
   }
@@ -30,10 +34,9 @@ export class StorageService {
     this._storage?.remove(key);
   }
 
-
   public getAll(){
     const lista = [];
-    this._storage.forEach((value, key, index) => {
+    this.storage.forEach(( value, key, index) => {
       lista.push(value);
     });
     return lista;

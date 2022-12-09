@@ -11,24 +11,40 @@
   <ng-container>
     <div class="texto">
       <div class="subtexto">
-        <span>Cadastrar-se</span>
+        <span>Logar-se</span>
       </div>
       <span class="subtexto2">Prosseguir para o aplicativo</span>
     </div>
 
-    <form action="" [formGroup]="formCadastro">
-        <ion-item class="itemlogin" lines="none" class="logindiv">
+    <form [formGroup]="formLogin">
+        <ion-item lines="none" class="logindiv">
           <ion-label position="floating">E-mail</ion-label>
           <ion-input formControlName="emailCampo" placeholder="Email@domain.com"></ion-input>
+          <ng-container *ngFor="let erro of mensagensValidacao.emailCampo">
+            <span
+            *ngIf="formLogin.get('emailCampo').hasError(erro.tipo) && (formLogin.get('emailCampo').dirty || formLogin.get('emailCampo').touched )"
+            class="msg-erro">
+            {{erro.mensagem}}
+          </span>
+          </ng-container>
         </ion-item>
 
-        <ion-item class="itemlogin" lines="none" style="top: 5px;" class="logindiv">
+        <ion-item lines="none" style="top: 5px;" class="logindiv">
           <ion-label position="floating">Senha</ion-label>
           <ion-input formControlName="senhaCampo" type="password" placeholder="Senha"></ion-input>
+          <ng-container *ngFor="let erro of mensagensValidacao.senhaCampo">
+            <span
+            *ngIf="formLogin.get('senhaCampo').hasError(erro.tipo) && (formLogin.get('senhaCampo').dirty || formLogin.get('senhaCampo').touched )"
+            class="msg-erro"
+            >
+              {{erro.mensagem}}
+            </span>
+          </ng-container>
         </ion-item>
 
         <ion-item lines="none" style="padding: 10px;">
-          <ion-button (click)="salvarCadastro()" slot="end">Criar conta</ion-button>
+          <ion-button  routerLink="/registro" slot="end" fill="clear">Criar conta</ion-button>
+          <ion-button (click)="fazerLogin()" slot="start">Login</ion-button>
         </ion-item>
     </form>
 
